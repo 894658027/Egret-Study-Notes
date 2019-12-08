@@ -1,4 +1,12 @@
 class loadBitmap extends egret.Sprite {
+    private static shared: loadBitmap;
+    public static getInstance() {
+        if (!loadBitmap.shared) {
+            loadBitmap.shared = new loadBitmap();
+        }
+        return loadBitmap.shared;
+    }
+
     public constructor() {
         super();
         this.addEventListener(egret.Event.ADDED_TO_STAGE, this.loadPicSprite, this);
@@ -16,8 +24,9 @@ class loadBitmap extends egret.Sprite {
         let texture = new egret.Texture();
         texture.bitmapData = bmd;
         let bmp: egret.Bitmap = new egret.Bitmap(texture);
-
+        // 创建一个自定义矩形对象
         var rect: egret.Rectangle = new egret.Rectangle(30, 31, 40, 41);
+        // 开启缩放区域检测
         bmp.scale9Grid = rect;
         bmp.width *= 2;
         bmp.y = 150;
@@ -33,7 +42,7 @@ class loadBitmap extends egret.Sprite {
         //json图集文件名字，图集指定图片name
         var txtr: egret.Texture = RES.getRes("pics_json#pic1");
         var img: egret.Bitmap = new egret.Bitmap(txtr);
-        console.log(txtr,img)
+        console.log(txtr, img)
         img.y = 450;
         img.x = 300;
         this.addChild(img);

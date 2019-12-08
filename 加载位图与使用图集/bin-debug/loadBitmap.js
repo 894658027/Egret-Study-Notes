@@ -13,18 +13,14 @@ var loadBitmap = (function (_super) {
     function loadBitmap() {
         var _this = _super.call(this) || this;
         _this.addEventListener(egret.Event.ADDED_TO_STAGE, _this.loadPicSprite, _this);
-        // this.loadBitMap();
-        _this.ansyLoadPic();
+        _this.loadBitMap();
         return _this;
     }
-    loadBitmap.prototype.ansyLoadPic = function () {
-        // RES.getResAsync(name:string,compFunc:Function,thisObject:any)
-        var a = RES.getResAsync("pics_json#pic2");
-        // var img: egret.Bitmap = new egret.Bitmap(a);
-        console.log(a);
-        // img.y = 450;
-        // img.x = 300;
-        // this.addChild(img);
+    loadBitmap.getInstance = function () {
+        if (!loadBitmap.shared) {
+            loadBitmap.shared = new loadBitmap();
+        }
+        return loadBitmap.shared;
     };
     loadBitmap.prototype.loadBitMap = function () {
         var imgLoader = new egret.ImageLoader;
@@ -38,7 +34,9 @@ var loadBitmap = (function (_super) {
         var texture = new egret.Texture();
         texture.bitmapData = bmd;
         var bmp = new egret.Bitmap(texture);
+        // 创建一个自定义矩形对象
         var rect = new egret.Rectangle(30, 31, 40, 41);
+        // 开启缩放区域检测
         bmp.scale9Grid = rect;
         bmp.width *= 2;
         bmp.y = 150;
@@ -61,3 +59,4 @@ var loadBitmap = (function (_super) {
     return loadBitmap;
 }(egret.Sprite));
 __reflect(loadBitmap.prototype, "loadBitmap");
+//# sourceMappingURL=loadBitmap.js.map

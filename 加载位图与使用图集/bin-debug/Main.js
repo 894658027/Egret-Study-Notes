@@ -153,8 +153,7 @@ var Main = (function (_super) {
         iconPic.y = stageH / 2;
         iconPic.scaleX = 1.5;
         iconPic.scaleY = 1.5;
-        var _bitMap = new loadBitmap();
-        this.addChild(_bitMap);
+        this.addChild(loadBitmap.getInstance());
     };
     /**
      * 根据name关键字创建一个Bitmap对象。name属性请参考resources/resource.json配置文件的内容。
@@ -169,3 +168,4 @@ var Main = (function (_super) {
     return Main;
 }(eui.UILayer));
 __reflect(Main.prototype, "Main");
+//# sourceMappingURL=Main.js.map

@@ -88,9 +88,8 @@ class Main extends eui.UILayer {
         iconPic.scaleX = 1.5;
         iconPic.scaleY = 1.5;
 
+        this.addChild( loadBitmap.getInstance() );
 
-        var _bitMap:loadBitmap = new loadBitmap();  
-        this.addChild( _bitMap );
     }
     /**
      * 根据name关键字创建一个Bitmap对象。name属性请参考resources/resource.json配置文件的内容。
