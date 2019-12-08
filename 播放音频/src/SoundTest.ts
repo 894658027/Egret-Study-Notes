@@ -1,7 +1,6 @@
 class SoundTest extends egret.DisplayObjectContainer {
     public constructor() {
         super();
-        // this.addEventListener(egret.Event.ADDED_TO_STAGE, this.onAddToStage, this);
     }
     public loadSoundRES(url) {
         var sound: egret.Sound = RES.getRes(url);
@@ -15,17 +14,7 @@ class SoundTest extends egret.DisplayObjectContainer {
         //开始加载
         sound.load(url);
     }
-    public urlLoaderSound() {
-        // var loader: egret.URLLoader = new egret.URLLoader();
-        // loader.addEventListener(egret.Event.COMPLETE, function loadOver(event: egret.Event) {
-        //     var sound: egret.Sound = loader.data;
-        //     sound.play();
-        // }, this);
-        // loader.dataFormat = egret.URLLoaderDataFormat.SOUND;
-        // loader.load(new egret.URLRequest("resource/sound/sound.mp3"));
-    }
     public onLoadComplete(event: egret.Event): void {
-        console.log(12312312312)
         //获取加载到的 Sound 对象
         var sound: egret.Sound = <egret.Sound>event.target;
         //播放音乐

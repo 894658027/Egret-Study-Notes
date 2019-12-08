@@ -1,4 +1,12 @@
 class startTickerTest extends egret.DisplayObjectContainer {
+	private static shared: startTickerTest;
+	public static getInstance() {
+		if (!startTickerTest.shared) {
+			startTickerTest.shared = new startTickerTest();
+		}
+		return startTickerTest.shared;
+	}
+
 	public constructor() {
 		super();
 		this.once(egret.Event.ADDED_TO_STAGE, this.onLoad, this);

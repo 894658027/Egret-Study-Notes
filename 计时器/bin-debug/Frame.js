@@ -18,6 +18,12 @@ var Frame = (function (_super) {
         _this.once(egret.Event.ADDED_TO_STAGE, _this.onLoad, _this);
         return _this;
     }
+    Frame.getInstance = function () {
+        if (!Frame.shared) {
+            Frame.shared = new Frame();
+        }
+        return Frame.shared;
+    };
     Frame.prototype.onLoad = function (event) {
         var star = new egret.Bitmap(RES.getRes("star_png"));
         this.addChild(star);

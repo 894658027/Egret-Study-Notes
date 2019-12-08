@@ -153,12 +153,12 @@ var Main = (function (_super) {
         iconPic.y = stageH / 2;
         iconPic.scaleX = 1.5;
         iconPic.scaleY = 1.5;
-        // var _timer:Timer = new Timer();  
-        // this.addChild( _timer );
+        // this.addChild( Timer.getInstance() );
+        this.addChild(Frame.getInstance());
         // var _ticker:startTickerTest = new startTickerTest();  
         // this.addChild( _ticker );
-        var _frame = new Frame();
-        this.addChild(_frame);
+        // var _frame:Frame = new Frame();  
+        // this.addChild( _frame );
     };
     /**
      * 根据name关键字创建一个Bitmap对象。name属性请参考resources/resource.json配置文件的内容。

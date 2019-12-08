@@ -34,6 +34,7 @@ class SoundExample extends egret.DisplayObjectContainer {
 
     private onTouch(event: egret.Event) {
         var sound = this.sound;
+        //获取音频长度
         var channel: egret.SoundChannel = this.soundChannel;
         if (channel) {
             //调用soundChannel对象的stop方法停止播放音频

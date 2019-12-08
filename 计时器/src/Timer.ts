@@ -1,5 +1,13 @@
 class Timer extends egret.DisplayObjectContainer
 {
+    private static shared:Timer;
+	public static getInstance(){
+		if( !Timer.shared ){
+			Timer.shared = new Timer();
+		}
+		return Timer.shared;
+	}
+
     public constructor()
     {
         super();

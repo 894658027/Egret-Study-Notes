@@ -1,4 +1,11 @@
 class Frame extends egret.DisplayObjectContainer {
+	private static shared: Frame;
+	public static getInstance() {
+		if (!Frame.shared) {
+			Frame.shared = new Frame();
+		}
+		return Frame.shared;
+	}
 	public constructor() {
 		super();
 		this.once(egret.Event.ADDED_TO_STAGE, this.onLoad, this);

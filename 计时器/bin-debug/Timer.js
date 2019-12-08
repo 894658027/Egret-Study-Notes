@@ -21,6 +21,12 @@ var Timer = (function (_super) {
         timer.start();
         return _this;
     }
+    Timer.getInstance = function () {
+        if (!Timer.shared) {
+            Timer.shared = new Timer();
+        }
+        return Timer.shared;
+    };
     Timer.prototype.timerFunc = function () {
         console.log("计时");
     };

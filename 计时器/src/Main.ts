@@ -78,7 +78,7 @@ class Main extends eui.UILayer {
         sky.width = stageW;
         sky.height = stageH;
 
-        
+
         let iconPic: egret.Bitmap = this.createBitmapByName('egret_icon_png');
         this.addChild(iconPic);
 
@@ -89,14 +89,12 @@ class Main extends eui.UILayer {
         iconPic.scaleY = 1.5;
 
 
-        // var _timer:Timer = new Timer();  
-        // this.addChild( _timer );
+        // this.addChild( Timer.getInstance() );
 
-        // var _ticker:startTickerTest = new startTickerTest();  
-        // this.addChild( _ticker );
+        // this.addChild( Frame.getInstance() );
 
-        var _frame:Frame = new Frame();  
-        this.addChild( _frame );
+        // this.addChild( startTickerTest.getInstance() )
+
     }
     /**
      * 根据name关键字创建一个Bitmap对象。name属性请参考resources/resource.json配置文件的内容。
