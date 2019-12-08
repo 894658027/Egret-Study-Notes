@@ -15,6 +15,12 @@ var Move = (function (_super) {
         _this.drawGrid();
         return _this;
     }
+    Move.getInstance = function () {
+        if (!Move.shared) {
+            Move.shared = new Move();
+        }
+        return Move.shared;
+    };
     Move.prototype.drawGrid = function () {
         this.addPicArea();
         //画一个红色的圆

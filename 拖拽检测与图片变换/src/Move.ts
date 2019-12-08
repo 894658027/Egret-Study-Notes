@@ -1,4 +1,11 @@
 class Move extends egret.Sprite {
+    private static shared: Move;
+    public static getInstance() {
+        if (!Move.shared) {
+            Move.shared = new Move();
+        }
+        return Move.shared;
+    }
     public constructor() {
         super();
         this.drawGrid();
@@ -7,7 +14,7 @@ class Move extends egret.Sprite {
     private offsetY: number;
     private circle: egret.Shape;
     private areaPic: egret.Bitmap;
-    
+
     private drawGrid() {
 
         this.addPicArea()
@@ -33,17 +40,17 @@ class Move extends egret.Sprite {
         this.stage.addEventListener(egret.TouchEvent.TOUCH_MOVE, this.onMove, this);
     }
     private stopMove(e: egret.TouchEvent) {
-        console.log(e,e.target,222);
+        // console.log(e, e.target, 222);
         let ax1 = this.areaPic.x;
         let ax2 = this.areaPic.x + this.areaPic.width;
 
         let ay1 = this.areaPic.y;
         let ay2 = this.areaPic.y + this.areaPic.height;
 
-        if(e.target.x > ax1 && e.target.x < ax2 && e.target.y > ay1 && e.target.y < ay2){
-           console.log('在容器内')
-        }else{
-             console.log('不在容器')
+        if (e.target.x > ax1 && e.target.x < ax2 && e.target.y > ay1 && e.target.y < ay2) {
+            console.log('在容器内')
+        } else {
+            console.log('不在容器')
         }
         //手指离开屏幕，移除手指移动的监听
         this.stage.removeEventListener(egret.TouchEvent.TOUCH_MOVE, this.onMove, this);
@@ -56,7 +63,6 @@ class Move extends egret.Sprite {
     private addPicArea() {
         this.areaPic = this.createBitmapByName('egret_icon_png');
         this.areaPic.x = 300; this.areaPic.y = 400
-        console.log(this.areaPic)
         this.addChild(this.areaPic);
     }
     private createBitmapByName(name: string): egret.Bitmap {

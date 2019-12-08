@@ -156,8 +156,7 @@ var Main = (function (_super) {
         // iconPic.width = 200;
         // iconPic.height = 350;
         // iconPic.rotation = 45;
-        var _move = new Move();
-        this.addChild(_move);
+        this.addChild(Move.getInstance());
     };
     /**
      * 根据name关键字创建一个Bitmap对象。name属性请参考resources/resource.json配置文件的内容。
