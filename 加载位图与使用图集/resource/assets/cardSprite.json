@@ -1,0 +1,7 @@
+{"file":"cardSprite.png","frames":{
+"cloud":{"x":123,"y":267,"w":120,"h":131,"offX":0,"offY":0,"sourceW":120,"sourceH":132},
+"moon":{"x":1,"y":267,"w":120,"h":131,"offX":0,"offY":0,"sourceW":120,"sourceH":132},
+"rainbow":{"x":123,"y":134,"w":120,"h":131,"offX":0,"offY":0,"sourceW":120,"sourceH":132},
+"sky":{"x":1,"y":134,"w":120,"h":131,"offX":0,"offY":0,"sourceW":120,"sourceH":132},
+"star":{"x":123,"y":1,"w":120,"h":131,"offX":0,"offY":0,"sourceW":120,"sourceH":132},
+"sun":{"x":1,"y":1,"w":120,"h":131,"offX":0,"offY":0,"sourceW":120,"sourceH":132}}}
