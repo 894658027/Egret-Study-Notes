@@ -17,8 +17,9 @@ class GridSprite extends egret.Sprite {
         sprcon2.graphics.endFill();
         this.addChild(sprcon2);
         sprcon2.y = 130;
-
+        //绘制一个矩形对象，用于制作蒙版区域
         var rect:egret.Rectangle = new egret.Rectangle(0,0,90,90);  
+        //设置蒙版
             sprcon2.mask = rect;
 
 
