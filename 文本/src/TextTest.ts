@@ -1,4 +1,13 @@
 class TextTest extends egret.DisplayObjectContainer {
+
+    private static shared:TextTest;
+    public static getInstace(){
+        if(!TextTest.shared){
+            TextTest.shared = new TextTest()
+        }else{
+           return TextTest.shared
+        }
+    }
     public constructor() {
         super();
         this.addEventListener(egret.Event.ADDED_TO_STAGE, this.onAddToStage, this);

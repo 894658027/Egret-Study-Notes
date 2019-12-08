@@ -35,7 +35,12 @@ var TextTest = (function (_super) {
         this.infoText.bold = true;
         this.infoText.italic = true;
         //    this.infoText.textAlign = egret.HorizontalAlign.RIGHT;
-        this.infoText.textAlign = egret.HorizontalAlign.LEFT;
+        // this.infoText.textAlign = egret.HorizontalAlign.LEFT;
+        // this.infoText.textAlign = egret.HorizontalAlign.CENTER;
+        // 纵列对齐
+        // this.infoText.verticalAlign = egret.VerticalAlign.BOTTOM;
+        //垂直居中对齐
+        // this.infoText.verticalAlign = egret.VerticalAlign.MIDDLE;
         this.addChild(this.infoText);
     };
     TextTest.prototype.drawInput = function () {
