@@ -62,6 +62,7 @@ class Main extends egret.DisplayObjectContainer {
 
         role.addEventListener(egret.Event.COMPLETE, function (e: egret.Event): void {
             egret.log("play over!")
+            this.removeChild(e.target);
         }, this);
 
         var count: number = 0;

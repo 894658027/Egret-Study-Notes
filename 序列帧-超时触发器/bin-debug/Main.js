@@ -58,6 +58,7 @@ var Main = (function (_super) {
         this.setEgretTimer(role);
         role.addEventListener(egret.Event.COMPLETE, function (e) {
             egret.log("play over!");
+            this.removeChild(e.target);
         }, this);
         var count = 0;
         role.addEventListener(egret.Event.LOOP_COMPLETE, function (e) {
