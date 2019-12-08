@@ -32,7 +32,7 @@ class Main extends eui.UILayer {
         await this.loadResource()
         this.createGameScene();
         const result = await RES.getResAsync("description_json")
-        this.startAnimation(result);
+        // this.startAnimation(result);
         await platform.login();
         const userInfo = await platform.getUserInfo();
         console.log(userInfo);
@@ -79,8 +79,8 @@ class Main extends eui.UILayer {
         sky.height = stageH;
 
        
-        var _toLocal:Tolocal = new Tolocal();  
-        this.addChild( _toLocal );
+        // var _toLocal:Tolocal = new Tolocal();  
+        this.addChild( Tolocal.getInstance() );
     }
     /**
      * 根据name关键字创建一个Bitmap对象。name属性请参考resources/resource.json配置文件的内容。

@@ -15,6 +15,12 @@ var Tolocal = (function (_super) {
         _this.addEventListener(egret.Event.ADDED_TO_STAGE, _this.starGame, _this);
         return _this;
     }
+    Tolocal.getInstance = function () {
+        if (!Tolocal.shared) {
+            Tolocal.shared = new Tolocal();
+        }
+        return Tolocal.shared;
+    };
     Tolocal.prototype.starGame = function () {
         this.container = new egret.DisplayObjectContainer();
         this.container.x = 200;
@@ -33,6 +39,7 @@ var Tolocal = (function (_super) {
     Tolocal.prototype.onClick = function () {
         //把舞台左上角的坐标(0,0)转换为 container 内部的坐标
         var targetPoint = this.container.globalToLocal(100, 150);
+        //将局部的circle坐标转换为全局的坐标
         console.log(targetPoint.x, targetPoint.y);
         //重新定位圆，可以看到圆形移到了屏幕的左上角
         this.circle.x = targetPoint.x;

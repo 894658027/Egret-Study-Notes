@@ -1,4 +1,14 @@
 class Tolocal extends egret.DisplayObjectContainer {
+
+    private static shared:Tolocal;
+	public static getInstance(){
+		if( !Tolocal.shared ){
+			Tolocal.shared = new Tolocal();
+		}
+		return Tolocal.shared;
+	}
+
+
     public constructor() {
         super();
         this.addEventListener(egret.Event.ADDED_TO_STAGE, this.starGame, this)
